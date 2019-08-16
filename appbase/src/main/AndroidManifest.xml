@@ -1,0 +1,13 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.nguyenvanquan7826.appbase">
+
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+
+    <!--<activity-->
+        <!--android:name="com.nguyenvanquan7826.appbase.FullscreenActivity"-->
+        <!--android:configChanges="orientation|keyboardHidden|screenSize"-->
+        <!--android:label="@string/app_name"-->
+        <!--android:theme="@style/FullscreenTheme"-->
+        <!--android:windowSoftInputMode="stateVisible|adjustResize" />-->
+</manifest>
