@@ -31,4 +31,5 @@ dependencies {
     implementation "com.hendraanggrian.material:collapsingtoolbarlayout-subtitle:1.0.0"
 
     implementation project(':appbase')
+    implementation project(':recyclerviewheader')
 }
