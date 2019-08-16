@@ -1,12 +1,12 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 28
-    buildToolsVersion "29.0.0"
+    compileSdkVersion buildConfig.compileSdk
+
     defaultConfig {
         applicationId "com.nguyenvanquan7826.appforlibs"
-        minSdkVersion 19
-        targetSdkVersion 28
+        minSdkVersion buildConfig.minSdk
+        targetSdkVersion buildConfig.targetSdk
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
@@ -16,6 +16,10 @@ android {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
+    }
+    compileOptions {
+        sourceCompatibility = javaversion.sourceCompatibility
+        targetCompatibility = javaversion.targetCompatibility
     }
 }
 
@@ -31,5 +35,5 @@ dependencies {
     implementation "com.hendraanggrian.material:collapsingtoolbarlayout-subtitle:1.0.0"
 
     implementation project(':appbase')
-    implementation project(':recyclerviewheader')
+    implementation project(':textviewtwoline')
 }

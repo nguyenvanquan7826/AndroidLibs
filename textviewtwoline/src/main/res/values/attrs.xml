@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="TextViewTwoLine">
+
+        <attr name="textTitle" format="string" />
+        <attr name="textDescription" format="string" />
+
+        <attr name="leftDrawableCompat" format="reference" />
+        <attr name="drawablePadding" format="reference|dimension" />
+        <attr name="drawableTintColor" format="reference|color" />
+
+        <attr name="titleFontFamily" format="reference" />
+        <attr name="descriptionFontFamily" format="reference" />
+
+        <attr name="titleTextAppearance" format="reference" />
+        <attr name="descriptionTextAppearance" format="reference" />
+
+        <attr name="titleTextSize" format="dimension" />
+        <attr name="descriptionTextSize" format="dimension" />
+
+        <attr name="TextViewTwoLineTitleTextStyle" format="enum">
+            <enum name="regular" value="0" />
+            <enum name="bold" value="1" />
+            <enum name="italic" value="2" />
+        </attr>
+
+        <attr name="TextViewTwoLineDescriptionTextStyle" format="enum">
+            <enum name="regular" value="0" />
+            <enum name="bold" value="1" />
+            <enum name="italic" value="2" />
+        </attr>
+
+        <attr name="textTitleColor" format="reference|color" />
+        <attr name="textDescriptionColor" format="reference|color" />
+        <attr name="keepDefaultLineSpacing" format="boolean" />
+
+    </declare-styleable>
+</resources>

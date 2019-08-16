@@ -1,0 +1,92 @@
+<resources>
+
+    <style name="SettingsItemStyle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:background">?attr/selectableItemBackground</item>
+        <item name="android:minHeight">?attr/listPreferredItemHeight</item>
+    </style>
+
+    <style name="SwitchCompatStyle">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_alignParentEnd">true</item>
+        <item name="android:layout_centerVertical">true</item>
+        <item name="android:layout_marginEnd">?attr/listPreferredItemPaddingRight</item>
+    </style>
+
+    <style name="TextViewTwoTextLineTextTitleStyle" parent="SettingsItemStyle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_alignParentStart">true</item>
+        <item name="android:layout_alignParentTop">true</item>
+        <item name="android:layout_centerVertical">true</item>
+        <item name="android:paddingStart">@dimen/item_padding_left</item> <!-- 24dp for center -->
+        <!--<item name="android:paddingEnd">?attr/listPreferredItemPaddingRight</item>-->
+        <item name="android:paddingEnd">@dimen/item_padding_right</item>
+        <item name="android:paddingTop">@dimen/item_padding_top</item>
+        <item name="android:paddingBottom">@dimen/item_padding_bottom</item>
+
+        <!--<item name="titleTextAppearance">@style/TextAppearanceTitle</item>-->
+        <item name="titleTextAppearance">@style/TextAppearance.AppCompat.Subhead</item>
+        <!--<item name="descriptionTextAppearance">@style/TextAppearanceDescription</item>-->
+        <item name="descriptionTextAppearance">@style/TextAppearance.AppCompat</item>
+
+        <item name="drawablePadding">?attr/listPreferredItemPaddingLeft
+        </item> <!-- 24dp for center -->
+        <!--<item name="drawableTintColor">@color/colorDrawableTint</item>-->
+        <!--<item name="drawableTintColor">?android:attr/colorAccent</item>-->
+
+        <!--<item name="titleFontFamily">@font/lato_bold</item>
+        <item name="descriptionFontFamily">@font/pt_mono_75f</item>-->
+
+        <!--<item name="textTitleColor">@color/colorDrawableTint</item>
+        <item name="textDescriptionColor">@color/colorTextDescription</item>-->
+
+        <item name="textTitleColor">?android:attr/textColorPrimary</item>
+        <item name="textDescriptionColor">?android:attr/textColorSecondary</item>
+
+        <item name="keepDefaultLineSpacing">true</item>
+    </style>
+
+    <!--<style name="TextAppearanceTitle" parent="TextAppearance.AppCompat.Subhead">-->
+    <!--<item name="android:fontFamily">@font/google_sans_medium</item>-->
+    <!--</style>-->
+
+    <!--<style name="TextAppearanceDescription" parent="TextAppearance.AppCompat">-->
+    <!--<item name="android:fontFamily">@font/google_sans_regular</item>-->
+    <!--</style>-->
+
+    <!--<style name="SystemSettingsItemStyle">-->
+    <!--<item name="android:layout_width">match_parent</item>-->
+    <!--<item name="android:layout_height">wrap_content</item>-->
+    <!--<item name="android:minHeight">?attr/listPreferredItemHeight</item>-->
+    <!--<item name="android:paddingTop">15dp</item>-->
+    <!--<item name="android:paddingBottom">15dp</item>-->
+    <!--<item name="android:background">?attr/selectableItemBackground</item>-->
+    <!--<item name="android:paddingStart">@dimen/item_padding</item> &lt;!&ndash; 24dp for center &ndash;&gt;-->
+    <!--<item name="android:paddingEnd">?attr/listPreferredItemPaddingRight</item>-->
+
+    <!--&lt;!&ndash;<item name="titleTextAppearance">@style/TextAppearance.AppCompat.Subhead</item>&ndash;&gt;-->
+    <!--&lt;!&ndash;<item name="descriptionTextAppearance">@style/TextAppearance.AppCompat.Large</item>&ndash;&gt;-->
+
+    <!--<item name="drawablePadding">@dimen/drawable_padding</item> &lt;!&ndash; 24dp for center &ndash;&gt;-->
+    <!--&lt;!&ndash;<item name="drawableTintColor">@color/colorDrawableTint</item>&ndash;&gt;-->
+    <!--<item name="drawableTintColor">?colorAccent</item>-->
+
+    <!--<item name="titleTextSize">16sp</item>-->
+    <!--<item name="titleFontFamily">@font/google_sans_medium</item>-->
+    <!--<item name="descriptionFontFamily">@font/google_sans_regular</item>-->
+
+    <!--&lt;!&ndash; <item name="textTitleColor">@color/colorDrawableTint</item>-->
+    <!--<item name="textDescriptionColor">@color/colorTextDescription</item>&ndash;&gt;-->
+
+    <!--<item name="textTitleColor">?android:attr/textColorPrimary</item>-->
+    <!--<item name="textDescriptionColor">?android:attr/textColorSecondary</item>-->
+
+    <!--<item name="keepDefaultLineSpacing">true</item>-->
+    <!--&lt;!&ndash;<item name="TextViewTwoLineTitleTextStyle">italic</item>&ndash;&gt;-->
+    <!--&lt;!&ndash;<item name="TextViewTwoLineDescriptionTextStyle">bold</item>&ndash;&gt;-->
+    <!--</style>-->
+
+</resources>

@@ -1,4 +1,4 @@
-package com.nguyenvanquan7826.recyclerviewheader;
+package com.kimcy929.textviewtwoline;
 
 import org.junit.Test;
 

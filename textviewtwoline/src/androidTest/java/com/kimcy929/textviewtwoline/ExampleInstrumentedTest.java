@@ -1,4 +1,4 @@
-package com.nguyenvanquan7826.recyclerviewheader;
+package com.kimcy929.textviewtwoline;
 
 import android.content.Context;
 
@@ -22,6 +22,6 @@ public class ExampleInstrumentedTest {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getTargetContext();
 
-        assertEquals("com.nguyenvanquan7826.recyclerviewheader.test", appContext.getPackageName());
+        assertEquals("com.nguyenvanquan7826.texttwoline2.test", appContext.getPackageName());
     }
 }
