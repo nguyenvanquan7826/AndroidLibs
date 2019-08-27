@@ -1,6 +1,5 @@
 package com.nguyenvanquan7826.appbase.util;
 
-
 import android.util.Log;
 
 import java.util.Arrays;

@@ -1,1 +1,1 @@
-include ':app', ':appbase', ':textviewtwoline'
+include ':app', ':appbase', ':textviewtwoline', ':swipeanddrag'

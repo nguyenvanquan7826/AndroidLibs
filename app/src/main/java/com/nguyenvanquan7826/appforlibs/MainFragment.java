@@ -1,41 +1,46 @@
 package com.nguyenvanquan7826.appforlibs;
 
+import android.app.Activity;
 import android.os.Bundle;
-import android.util.Log;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.fragment.app.Fragment;
+import androidx.fragment.app.ListFragment;
 
+/**
+ * @author Paul Burke (ipaulpro)
+ */
+public class MainFragment extends ListFragment {
 
-public class MainFragment extends Fragment {
+    public interface OnListItemClickListener {
+        void onListItemClick(int position);
+    }
 
-    @Nullable
-    @Override
-    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.layout_fragment, container, false);
+    private OnListItemClickListener mItemClickListener;
+
+    public MainFragment() {
     }
 
     @Override
-    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
-        super.onViewCreated(view, savedInstanceState);
+    public void onAttach(@NonNull Activity activity) {
+        super.onAttach(activity);
 
-        final User user = new User().setId(1).setName("q");
-        user.addChangeListener(new ChangeListener() {
-            @Override
-            public void onUpdate() {
-                Log.e("main", "update...");
-            }
-        });
+        mItemClickListener = (OnListItemClickListener) activity;
+    }
 
-        view.findViewById(R.id.btn).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                ((MainActivity) getActivity()).showFragment(TwoFragment.create( user));
-            }
-        });
+    @Override
+    public void onActivityCreated(Bundle savedInstanceState) {
+        super.onActivityCreated(savedInstanceState);
+
+        final String[] items = getResources().getStringArray(R.array.main_items);
+        final ArrayAdapter<String> adapter = new ArrayAdapter<>(getActivity(), android.R.layout.simple_list_item_1, items);
+        setListAdapter(adapter);
+    }
+
+    @Override
+    public void onListItemClick(ListView l, View v, int position, long id) {
+        mItemClickListener.onListItemClick(position);
     }
 }

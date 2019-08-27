@@ -1,16 +1,15 @@
 package com.nguyenvanquan7826.appbase.activity;
 
 import android.os.Bundle;
+
+import androidx.appcompat.widget.Toolbar;
+import androidx.fragment.app.Fragment;
+import androidx.viewpager.widget.ViewPager;
+
 import com.google.android.material.tabs.TabLayout;
 import com.nguyenvanquan7826.appbase.PagerAdapter;
 import com.nguyenvanquan7826.appbase.R;
-import com.nguyenvanquan7826.appbase.activity.BaseActivity;
 import com.nguyenvanquan7826.appbase.util.ViewUtil;
-
-import androidx.fragment.app.Fragment;
-import androidx.viewpager.widget.ViewPager;
-import androidx.appcompat.widget.Toolbar;
-
 
 public class BaseTabActivity extends BaseActivity {
 
