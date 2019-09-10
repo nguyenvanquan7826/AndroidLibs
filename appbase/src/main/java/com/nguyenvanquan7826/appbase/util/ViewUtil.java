@@ -3,6 +3,8 @@ package com.nguyenvanquan7826.appbase.util;
 import android.Manifest;
 import android.app.Activity;
 import android.content.ActivityNotFoundException;
+import android.content.ClipData;
+import android.content.ClipboardManager;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
@@ -359,5 +361,19 @@ public class ViewUtil {
     public static void showSoftKeyboard(Activity activity) {
         InputMethodManager imgr = (InputMethodManager) activity.getSystemService(Context.INPUT_METHOD_SERVICE);
         imgr.toggleSoftInput(InputMethodManager.SHOW_FORCED, InputMethodManager.HIDE_IMPLICIT_ONLY);
+    }
+
+    public static void shareText(Context context, String shareBody, String subject, String textSelectAppToShare) {
+        Intent sharingIntent = new Intent(android.content.Intent.ACTION_SEND);
+        sharingIntent.setType("text/plain");
+        sharingIntent.putExtra(android.content.Intent.EXTRA_SUBJECT, subject);
+        sharingIntent.putExtra(android.content.Intent.EXTRA_TEXT, shareBody);
+        context.startActivity(Intent.createChooser(sharingIntent, textSelectAppToShare));
+    }
+
+    public static void copyTOClipboard(Context context, String label, String text) {
+        ClipboardManager clipboard = (ClipboardManager) context.getSystemService(Context.CLIPBOARD_SERVICE);
+        ClipData clip = ClipData.newPlainText(label, text);
+        clipboard.setPrimaryClip(clip);
     }
 }

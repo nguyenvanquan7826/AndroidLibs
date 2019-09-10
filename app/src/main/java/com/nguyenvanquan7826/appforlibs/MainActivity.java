@@ -15,7 +15,6 @@ public class MainActivity extends AppCompatActivity implements MainFragment.OnLi
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-
         if (savedInstanceState == null) {
             MainFragment fragment = new MainFragment();
             getSupportFragmentManager().beginTransaction()

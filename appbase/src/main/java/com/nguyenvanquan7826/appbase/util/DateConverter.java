@@ -11,6 +11,7 @@ import java.util.Locale;
  * Created by nguyenvanquan7826 on 7/18/17
  */
 
+@Deprecated
 public class DateConverter {
     public static final String FORMAT_DATETIME_SQL = "yyyy-MM-dd HH:mm:ss";
     public static final String FORMAT_DATE_SQL = "yyyy-MM-dd";
