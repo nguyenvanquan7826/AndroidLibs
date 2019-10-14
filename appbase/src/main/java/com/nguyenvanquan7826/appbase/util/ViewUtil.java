@@ -169,6 +169,28 @@ public class ViewUtil {
         }
     }
 
+    public static void chooseFile(Fragment fragment, int requestCodeChooseFile, int requestCodePermission, boolean isRequest) {
+        final String[] permissions = {
+                Manifest.permission.READ_EXTERNAL_STORAGE,
+                Manifest.permission.WRITE_EXTERNAL_STORAGE,
+        };
+        if (!ViewUtil.checkPermissions(fragment.getContext(), permissions)) {
+            if (isRequest) {
+                fragment.requestPermissions( permissions, requestCodePermission);
+            }
+        } else {
+            Intent getIntent = new Intent(Intent.ACTION_GET_CONTENT);
+            getIntent.setType("image/*");
+
+            Intent pickIntent = new Intent(Intent.ACTION_PICK, android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
+            pickIntent.setType("image/*");
+
+            Intent chooserIntent = Intent.createChooser(getIntent, "Select Image");
+            chooserIntent.putExtra(Intent.EXTRA_INITIAL_INTENTS, new Intent[]{pickIntent});
+            fragment.startActivityForResult(chooserIntent, requestCodeChooseFile);
+        }
+    }
+
     public static boolean checkPermissions(Context context, String... permisstions) {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M && context != null && permisstions != null) {
             for (String permission : permisstions) {
