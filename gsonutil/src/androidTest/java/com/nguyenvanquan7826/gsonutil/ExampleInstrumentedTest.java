@@ -1,4 +1,4 @@
-package com.doanthidiem.gsonutil;
+package com.nguyenvanquan7826.gsonutil;
 
 import android.content.Context;
 
@@ -22,6 +22,6 @@ public class ExampleInstrumentedTest {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getInstrumentation().getTargetContext();
 
-        assertEquals("com.doanthidiem.gsonutil.test", appContext.getPackageName());
+        assertEquals("com.nguyenvanquan7826.gsonutil.test", appContext.getPackageName());
     }
 }

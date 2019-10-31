@@ -1,4 +1,4 @@
-package com.doanthidiem.gsonutil;
+package com.nguyenvanquan7826.gsonutil;
 
 import org.junit.Test;
 
