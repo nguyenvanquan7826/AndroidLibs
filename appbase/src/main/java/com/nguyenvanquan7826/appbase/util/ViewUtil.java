@@ -15,7 +15,6 @@ import android.os.Build;
 import android.telephony.SmsManager;
 import android.util.Log;
 import android.util.TypedValue;
-import android.view.Menu;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.WindowManager;
@@ -25,7 +24,6 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.ListAdapter;
 import android.widget.ListView;
-import android.widget.PopupMenu;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -176,7 +174,7 @@ public class ViewUtil {
         };
         if (!ViewUtil.checkPermissions(fragment.getContext(), permissions)) {
             if (isRequest) {
-                fragment.requestPermissions( permissions, requestCodePermission);
+                fragment.requestPermissions(permissions, requestCodePermission);
             }
         } else {
             Intent getIntent = new Intent(Intent.ACTION_GET_CONTENT);
@@ -364,6 +362,7 @@ public class ViewUtil {
         toast(context, context.getString(message));
     }
 
+    @Deprecated
     public static void hideSoftKeyboard(Activity activity) {
         activity.getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);
     }
@@ -372,6 +371,9 @@ public class ViewUtil {
         InputMethodManager imm = (InputMethodManager) activity.getSystemService(Context.INPUT_METHOD_SERVICE);
         if (imm == null) return;
         imm.hideSoftInputFromWindow(editText.getWindowToken(), 0);
+
+        // for old way
+        activity.getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);
     }
 
     public static void showSoftKeyboard(Activity activity, EditText editText) {
