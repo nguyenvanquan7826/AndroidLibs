@@ -1,6 +1,5 @@
 package com.nguyenvanquan7826.appbase.fragment;
 
-import android.os.Build;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -45,9 +44,7 @@ public class BaseTabFragment extends InAcFragment {
         pager.setAdapter(pagerAdapter);
         pager.setOffscreenPageLimit(pagerAdapter.getCount());
         tabLayout.setupWithViewPager(pager);
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-            tabLayout.setElevation(8);
-        }
+        tabLayout.setElevation(8);
     }
 
     @Override
