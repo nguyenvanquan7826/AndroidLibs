@@ -21,6 +21,8 @@ import java.util.Objects;
 public class BaseTabFragment extends InAcFragment {
 
     private PagerAdapter<Fragment> pagerAdapter;
+    private ViewPager pager;
+    private TabLayout tabLayout;
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
@@ -37,14 +39,8 @@ public class BaseTabFragment extends InAcFragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        final ViewPager pager = findViewById(R.id.pager);
-        TabLayout tabLayout = findViewById(R.id.tab);
-
-        pagerAdapter = new PagerAdapter<>(getChildFragmentManager());
-        pager.setAdapter(pagerAdapter);
-        pager.setOffscreenPageLimit(pagerAdapter.getCount());
-        tabLayout.setupWithViewPager(pager);
-        tabLayout.setElevation(8);
+        findView();
+        setupPageAndTab();
     }
 
     @Override
@@ -57,6 +53,19 @@ public class BaseTabFragment extends InAcFragment {
     public void onPause() {
         super.onPause();
         showElevationAppBar();
+    }
+
+    protected void findView() {
+        pager = findViewById(R.id.pager);
+        tabLayout = findViewById(R.id.tab);
+    }
+
+    protected void setupPageAndTab() {
+        pagerAdapter = new PagerAdapter<>(getChildFragmentManager());
+        pager.setAdapter(pagerAdapter);
+        pager.setOffscreenPageLimit(pagerAdapter.getCount());
+        tabLayout.setupWithViewPager(pager);
+        tabLayout.setElevation(8);
     }
 
     protected AppBarLayout getAppBarLayout() {
@@ -77,5 +86,13 @@ public class BaseTabFragment extends InAcFragment {
 
     protected void build() {
         pagerAdapter.notifyDataSetChanged();
+    }
+
+    public ViewPager getPager() {
+        return pager;
+    }
+
+    public TabLayout getTabLayout() {
+        return tabLayout;
     }
 }
