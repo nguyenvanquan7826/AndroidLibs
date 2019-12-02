@@ -27,6 +27,8 @@ public class BaseTabFragment extends InAcFragment {
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        pagerAdapter = new PagerAdapter<>(getChildFragmentManager());
     }
 
     @Nullable
@@ -61,8 +63,6 @@ public class BaseTabFragment extends InAcFragment {
     }
 
     protected void setupPageAndTab() {
-        if (pagerAdapter == null) pagerAdapter = new PagerAdapter<>(getChildFragmentManager());
-
         pager.setAdapter(pagerAdapter);
         pager.setOffscreenPageLimit(pagerAdapter.getCount());
         tabLayout.setupWithViewPager(pager);
