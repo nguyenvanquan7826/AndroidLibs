@@ -61,7 +61,8 @@ public class BaseTabFragment extends InAcFragment {
     }
 
     protected void setupPageAndTab() {
-        pagerAdapter = new PagerAdapter<>(getChildFragmentManager());
+        if (pagerAdapter == null) pagerAdapter = new PagerAdapter<>(getChildFragmentManager());
+
         pager.setAdapter(pagerAdapter);
         pager.setOffscreenPageLimit(pagerAdapter.getCount());
         tabLayout.setupWithViewPager(pager);
@@ -84,7 +85,12 @@ public class BaseTabFragment extends InAcFragment {
         pagerAdapter.add(fragment, title);
     }
 
+    @Deprecated
     protected void build() {
+        pagerAdapter.notifyDataSetChanged();
+    }
+
+    protected void buildPage() {
         pagerAdapter.notifyDataSetChanged();
     }
 
@@ -94,5 +100,9 @@ public class BaseTabFragment extends InAcFragment {
 
     public TabLayout getTabLayout() {
         return tabLayout;
+    }
+
+    public PagerAdapter<Fragment> getPagerAdapter() {
+        return pagerAdapter;
     }
 }

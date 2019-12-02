@@ -36,7 +36,13 @@ public class BaseTabActivity extends BaseActivity {
         pagerAdapter.add(fragment, title);
     }
 
+    @Deprecated
     protected void build() {
         pagerAdapter.notifyDataSetChanged();
     }
+
+    protected void buildPage() {
+        pagerAdapter.notifyDataSetChanged();
+    }
+
 }
