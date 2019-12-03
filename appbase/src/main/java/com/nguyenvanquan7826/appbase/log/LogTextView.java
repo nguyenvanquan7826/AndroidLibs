@@ -53,12 +53,12 @@ public class LogTextView implements LogView {
 
     @Override
     public void show(int message) {
-        show(context.getString(message), LOG_LEVEL_NOMAL);
+        show(context.getString(message), LOG_LEVEL_NONE);
     }
 
     @Override
     public void show(String message) {
-        show(message, LOG_LEVEL_NOMAL);
+        show(message, LOG_LEVEL_NONE);
     }
 
     @Override
@@ -70,8 +70,11 @@ public class LogTextView implements LogView {
     public void show(String message, int logLevel) {
         tv.setVisibility(View.VISIBLE);
         tv.setText(message);
-        tv.setBackgroundColor(ContextCompat.getColor(context, getBgColor(logLevel)));
-        tv.setTextColor(ContextCompat.getColor(context, getTextColor(logLevel)));
+
+        if (logLevel != LOG_LEVEL_NONE) {
+            tv.setBackgroundColor(ContextCompat.getColor(context, getBgColor(logLevel)));
+            tv.setTextColor(ContextCompat.getColor(context, getTextColor(logLevel)));
+        }
     }
 
     @Override
