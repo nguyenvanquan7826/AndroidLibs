@@ -9,6 +9,15 @@
     <color name="TRANSPARENT">#00FFFFFF</color>
 
     <color name="black_overlay">#66000000</color>
+
+    <color name="colorBgNomal">@color/TRANSPARENT</color>
+    <color name="colorTextNomal">@color/black</color>
+    <color name="colorBgWarning">#e68633</color>
+    <color name="colorTextWarning">@color/white</color>
+    <color name="colorBgError">#FF0000</color>
+    <color name="colorTextError">@color/white</color>
+
+
     <!--reds-->
     <color name="md_red_50">#FFEBEE</color>
     <color name="md_red_100">#FFCDD2</color>

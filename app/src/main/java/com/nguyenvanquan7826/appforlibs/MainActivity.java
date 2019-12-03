@@ -6,6 +6,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
 
+import com.nguyenvanquan7826.appbase.log.LogTextView;
+import com.nguyenvanquan7826.appbase.log.LogView;
+
 public class MainActivity extends AppCompatActivity implements MainFragment.OnListItemClickListener {
 
     @Override
@@ -17,10 +20,15 @@ public class MainActivity extends AppCompatActivity implements MainFragment.OnLi
 
         if (savedInstanceState == null) {
             MainFragment fragment = new MainFragment();
-            getSupportFragmentManager().beginTransaction()
-                    .add(R.id.layoutFragment, fragment)
-                    .commit();
+            getSupportFragmentManager().beginTransaction().add(R.id.layoutFragment, fragment).commit();
         }
+
+        LogView logViewNomal = new LogTextView(findViewById(R.id.tvLogNomal));
+        logViewNomal.show(R.string.app_name, LogView.LOG_LEVEL_NOMAL);
+        LogView logViewWraning = new LogTextView(findViewById(R.id.tvLogWraning));
+        logViewWraning.show(R.string.app_name, LogView.LOG_LEVEL_WARNING);
+        LogView logViewError = new LogTextView(findViewById(R.id.tvLogError));
+        logViewError.show(R.string.app_name, LogView.LOG_LEVEL_ERROR);
     }
 
     @Override
