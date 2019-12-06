@@ -45,6 +45,10 @@ public class LogTextView implements LogView {
         }
     }
 
+    public void setOnClick(View.OnClickListener onClickListener) {
+        tv.setOnClickListener(onClickListener);
+    }
+
     @Override
     public void hind() {
         tv.setVisibility(View.GONE);
