@@ -45,6 +45,7 @@ public class LogTextView implements LogView {
         }
     }
 
+    @Override
     public void setOnClick(View.OnClickListener onClickListener) {
         tv.setOnClickListener(onClickListener);
     }

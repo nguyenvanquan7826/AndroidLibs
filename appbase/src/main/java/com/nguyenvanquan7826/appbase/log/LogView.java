@@ -1,5 +1,7 @@
 package com.nguyenvanquan7826.appbase.log;
 
+import android.view.View;
+
 public interface LogView {
     int LOG_LEVEL_NONE = 0;
     int LOG_LEVEL_NOMAL = 1;
@@ -17,4 +19,6 @@ public interface LogView {
     void show(String message, int logLevel);
 
     void setLogTextColor(int color);
+
+    void setOnClick(View.OnClickListener onClickListener);
 }
