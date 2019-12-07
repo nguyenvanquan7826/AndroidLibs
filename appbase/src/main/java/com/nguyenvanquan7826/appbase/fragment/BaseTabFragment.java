@@ -1,6 +1,8 @@
 package com.nguyenvanquan7826.appbase.fragment;
 
+import android.os.Build;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -48,12 +50,15 @@ public class BaseTabFragment extends InAcFragment {
     @Override
     public void onResume() {
         super.onResume();
+        Log.e(getLogTag(), "onResume");
         hindElevationAppBar();
+        // new Handler().postDelayed(this::hindElevationAppBar,50);
     }
 
     @Override
     public void onPause() {
         super.onPause();
+        Log.e(getLogTag(), "onPause");
         showElevationAppBar();
     }
 
@@ -74,11 +79,17 @@ public class BaseTabFragment extends InAcFragment {
     }
 
     protected void hindElevationAppBar() {
-        getAppBarLayout().setElevation(0);
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            getAppBarLayout().setElevation(0);
+            getAppBarLayout().setStateListAnimator(null);
+        }
     }
 
     protected void showElevationAppBar() {
-        getAppBarLayout().setElevation(8);
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            getAppBarLayout().setElevation(0);
+            getAppBarLayout().setStateListAnimator(null);
+        }
     }
 
     protected void addTab(Fragment fragment, String title) {

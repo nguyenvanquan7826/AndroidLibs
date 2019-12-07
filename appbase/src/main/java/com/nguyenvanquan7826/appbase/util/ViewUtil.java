@@ -209,6 +209,13 @@ public class ViewUtil {
                     drawable.mutate().setColorFilter(ContextCompat.getColor(context, color), PorterDuff.Mode.SRC_IN);
                 }
             }
+
+            Drawable[] drawablesRelative = view.getCompoundDrawablesRelative();
+            for (Drawable drawable : drawablesRelative) {
+                if (drawable != null) {
+                    drawable.mutate().setColorFilter(ContextCompat.getColor(context, color), PorterDuff.Mode.SRC_IN);
+                }
+            }
         }
     }
 
