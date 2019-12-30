@@ -697,11 +697,15 @@ public class TextViewTwoLine extends View {
 
     public TextViewTwoLine setDescriptionColor(int descriptionColor) {
         this.descriptionColor = descriptionColor;
+        updateContentBounds();
+        requestLayout(); // recall
         return this;
     }
 
     public TextViewTwoLine setTextTitleColor(int textTitleColor) {
         this.textTitleColor = textTitleColor;
+        updateContentBounds();
+        requestLayout(); // recall
         return this;
     }
 }
