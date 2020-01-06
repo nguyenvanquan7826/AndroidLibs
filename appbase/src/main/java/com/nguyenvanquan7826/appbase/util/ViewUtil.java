@@ -30,9 +30,11 @@ import android.widget.Toast;
 
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.AppCompatImageView;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
+import androidx.core.widget.ImageViewCompat;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
@@ -299,6 +301,12 @@ public class ViewUtil {
     public static void setColorImageView(Context context, int color, ImageView... ivs) {
         for (int i = 0; i < ivs.length; i++) {
             setColorImageView(context, color, ivs[i]);
+        }
+    }
+
+    public static void setColorImageViewCompat(Context context, int color, AppCompatImageView... ivs) {
+        for (AppCompatImageView iv : ivs) {
+            ImageViewCompat.setImageTintList(iv, context.getResources().getColorStateList(color));
         }
     }
 
