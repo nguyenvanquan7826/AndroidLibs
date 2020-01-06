@@ -71,7 +71,7 @@ public class BaseTabFragment extends InAcFragment {
         pager.setAdapter(pagerAdapter);
         pager.setOffscreenPageLimit(pagerAdapter.getCount());
         tabLayout.setupWithViewPager(pager);
-        tabLayout.setElevation(8);
+//        tabLayout.setElevation(8);
     }
 
     protected AppBarLayout getAppBarLayout() {
