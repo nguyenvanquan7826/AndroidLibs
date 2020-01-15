@@ -63,6 +63,7 @@ public class TextViewTwoLine extends View {
 
     private int textTitleColor;
     private int descriptionColor;
+    private int defaultDescriptionColor;
 
     private int titleTextAppearId;
     private int descriptionTextAppearId;
@@ -274,6 +275,8 @@ public class TextViewTwoLine extends View {
             int width = (int) desTextPaint.measureText(textDescription.toString());
             createDescriptionLayout(width);
         }
+
+        defaultDescriptionColor = descriptionColor;
     }
 
     private int getTextSizeFromTextAppearance(int textAppearanceId, int defaultTextSize) {
@@ -685,6 +688,10 @@ public class TextViewTwoLine extends View {
 
     public int getDescriptionColor() {
         return descriptionColor;
+    }
+
+    public int getDefaultDescriptionColor() {
+        return defaultDescriptionColor;
     }
 
     public CharSequence getTextDescription() {
