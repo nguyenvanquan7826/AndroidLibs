@@ -99,6 +99,13 @@ public class TextViewTwoLine extends View {
         requestLayout(); // recall onMeasure
     }
 
+    public void setLeftDrawableCompat(Drawable leftDrawable) {
+        leftDrawableCompat = leftDrawable;
+        updateContentBounds();
+        requestLayout(); // recall onMeasure
+    }
+
+
     @SuppressWarnings("unused")
     public void setText(@Nullable String textTitle, @Nullable String textDescription) {
         this.textTitle = textTitle;
@@ -688,10 +695,6 @@ public class TextViewTwoLine extends View {
 
     public int getDescriptionColor() {
         return descriptionColor;
-    }
-
-    public int getDefaultDescriptionColor() {
-        return defaultDescriptionColor;
     }
 
     public CharSequence getTextDescription() {
