@@ -718,4 +718,10 @@ public class TextViewTwoLine extends View {
         requestLayout(); // recall
         return this;
     }
+
+    public void setDrawableTintColor(int color){
+        this.drawableTintColor = color;
+        updateContentBounds();
+        requestLayout(); // recall
+    }
 }
